@@ -8,5 +8,5 @@ export const MockInterview = pgTable('mockInterview', {
     jobExperience: varchar('jobExperience', { length: 100 }).notNull(),
     createdBy: varchar('createdBy', { length: 255 }).notNull(),
     createdAt: varchar('createdAt', { length: 255 }).notNull(),
-    mockId: varchar('mockId', { length: 36 }).notNull(), // UUID length is typically 36
+    mockId: varchar('mockId', { length: 36 }).notNull(),
 });
