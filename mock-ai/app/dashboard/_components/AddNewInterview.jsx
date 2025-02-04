@@ -38,7 +38,7 @@ function AddNewInterview() {
       const MockResponse = (result.response.text())
         .replace("```json", "")
         .replace("```", "");
-      // console.log(JSON.parse(MockResponse));
+      console.log(JSON.parse(MockResponse));
       setJsonResponse(MockResponse);
       const resp= await db.insert(MockInterview).values({
             jsonMockResp:MockResponse,

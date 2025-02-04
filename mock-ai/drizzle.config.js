@@ -1,11 +1,11 @@
-import 'dotenv/config';
-import { defineConfig } from 'drizzle-kit';
+import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  out: './drizzle',
-  schema: './utils/schema.js',
-  dialect: 'postgresql',
+  dialect: "postgresql",
+  schema: "./utils/schema.js",
+  out: "./drizzle",
   dbCredentials: {
-    url:"postgresql://neondb_owner:npg_sBxS1ZUIL6Of@ep-nameless-poetry-a892j53h-pooler.eastus2.azure.neon.tech/mock-ai?sslmode=require",
+    url: "postgresql://neondb_owner:npg_jHcAuEK1JXm0@ep-black-moon-a8hiom59-pooler.eastus2.azure.neon.tech/mock-ai?sslmode=require",
   },
+
 });
