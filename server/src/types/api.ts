@@ -75,8 +75,6 @@ export interface getCandidateDetailsResponse {
     success: boolean,
     data: {
         candidate: ICandidate,
-        interview?: any, 
-        chats: any[]    
     }
 }
 
