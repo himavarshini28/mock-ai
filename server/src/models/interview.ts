@@ -7,7 +7,14 @@ interface IQuestion
     answer:string,
     aiScore:number,
     timeTaken:number,
-    level:"easy"|"medium"|"hard"
+    level:"easy"|"medium"|"hard",
+    reasoning?: string,
+    breakdown?: {
+        technical_accuracy: number;
+        clarity: number;
+        completeness: number;
+        depth: number;
+    }
 }
 
 interface Iinterview extends Document
@@ -32,7 +39,14 @@ const questionSchema= new mongoose.Schema<IQuestion>(
                     enum:["easy","medium","hard"],   
                 },
                 aiScore:Number,
-                timeTaken:Number 
+                timeTaken:Number,
+                reasoning: { type: String, default: "" },
+                breakdown: {
+                    technical_accuracy: { type: Number, default: 0 },
+                    clarity: { type: Number, default: 0 },
+                    completeness: { type: Number, default: 0 },
+                    depth: { type: Number, default: 0 }
+                }
            
 });
 

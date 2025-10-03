@@ -6,6 +6,13 @@ interface IQuestion {
     aiScore: number;
     timeTaken: number;
     level: "easy" | "medium" | "hard";
+    reasoning?: string;
+    breakdown?: {
+        technical_accuracy: number;
+        clarity: number;
+        completeness: number;
+        depth: number;
+    };
 }
 interface Iinterview extends Document {
     candidateId: mongoose.Types.ObjectId | ICandidate;

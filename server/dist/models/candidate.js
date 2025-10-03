@@ -33,6 +33,23 @@ const candidateSchema = new mongoose_1.default.Schema({
     summary: {
         type: String,
         default: ""
+    },
+    extractionData: {
+        name: {
+            value: { type: String, default: null },
+            confidence: { type: Number, default: 0, min: 0, max: 1 },
+            source: { type: String, enum: ['ai', 'regex', 'manual'], default: 'ai' }
+        },
+        email: {
+            value: { type: String, default: null },
+            confidence: { type: Number, default: 0, min: 0, max: 1 },
+            source: { type: String, enum: ['ai', 'regex', 'manual'], default: 'ai' }
+        },
+        phone: {
+            value: { type: String, default: null },
+            confidence: { type: Number, default: 0, min: 0, max: 1 },
+            source: { type: String, enum: ['ai', 'regex', 'manual'], default: 'ai' }
+        }
     }
 }, {
     timestamps: true

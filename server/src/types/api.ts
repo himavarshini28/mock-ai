@@ -44,7 +44,24 @@ export interface createCandidateResponse{
     success:boolean,
     data?:ICandidate,
     message?:string,
-    missingFields?:string[]
+    missingFields?:string[],
+    extractionData?: {
+        name: {
+            value: string | null;
+            confidence: number;
+            source: 'ai' | 'regex' | 'manual';
+        };
+        email: {
+            value: string | null;
+            confidence: number;
+            source: 'ai' | 'regex' | 'manual';
+        };
+        phone: {
+            value: string | null;
+            confidence: number;
+            source: 'ai' | 'regex' | 'manual';
+        };
+    }
 }
 
 export interface getCandidateResponse{
@@ -75,6 +92,8 @@ export interface getCandidateDetailsResponse {
     success: boolean,
     data: {
         candidate: ICandidate,
+        interview?: any,
+        chats: any[]
     }
 }
 

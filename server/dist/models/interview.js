@@ -13,7 +13,14 @@ const questionSchema = new mongoose_1.default.Schema({
         enum: ["easy", "medium", "hard"],
     },
     aiScore: Number,
-    timeTaken: Number
+    timeTaken: Number,
+    reasoning: { type: String, default: "" },
+    breakdown: {
+        technical_accuracy: { type: Number, default: 0 },
+        clarity: { type: Number, default: 0 },
+        completeness: { type: Number, default: 0 },
+        depth: { type: Number, default: 0 }
+    }
 });
 const interviewSchema = new mongoose_1.default.Schema({
     candidateId: {
