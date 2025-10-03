@@ -83,13 +83,13 @@ export interface completeInterviewResponse {
     data: {
         finalScore: number,
         summary: string,
-        interview: any  
+        interview?: any  
     }
 }
 
 export interface createChatResponse {
     success: boolean,
-    data: any  
+    data?: any  
 }
 
 export interface ErrorResponse {
