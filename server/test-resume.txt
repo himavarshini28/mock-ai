@@ -1,16 +1,4 @@
-RESUME
-
 John Doe
-Software Engineer
-Email: john.doe@email.com
-Phone: +1-555-123-4567
-
-EXPERIENCE:
-- 3 years React development
-- 2 years Node.js backend
-- Full-stack development
-
-SKILLS:
-- JavaScript, TypeScript
-- React, Node.js
-- MongoDB, PostgreSQL
+john.doe@example.com
++1-555-123-4567
+Software Engineer with 5 years experience

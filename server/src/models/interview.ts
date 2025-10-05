@@ -20,8 +20,11 @@ interface IQuestion
 interface Iinterview extends Document
 {
     candidateId:mongoose.Types.ObjectId | ICandidate,
+    jobPosition?: string,
+    experienceLevel?: string,
+    techStack?: string[],
     questions:IQuestion[],
-    status:"not-started"|"in-progress"|"completed",
+    status:"not-started"|"in-progress"|"completed"|"pending",
     finalScore:number,
     summary:string,
     startDate:Date,
@@ -58,6 +61,18 @@ const interviewSchema = new mongoose.Schema<Iinterview>(
             ref:"candidate",
             required:true
         },
+        jobPosition: {
+            type: String,
+            default: "Software Developer"
+        },
+        experienceLevel: {
+            type: String,
+            default: "Mid-level"
+        },
+        techStack: {
+            type: [String],
+            default: ["JavaScript", "React"]
+        },
         questions:
         [
            questionSchema
@@ -65,7 +80,7 @@ const interviewSchema = new mongoose.Schema<Iinterview>(
         status:
         {
             type:String,
-            enum:["not-started","in-progress","completed"],
+            enum:["not-started","in-progress","completed","pending"],
             default:"not-started"
         },
         finalScore:

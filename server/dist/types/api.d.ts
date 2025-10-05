@@ -23,10 +23,8 @@ export interface createChatRequest {
     message: string;
 }
 export interface SubmitAnswerRequest {
-    interviewId: mongoose.Types.ObjectId;
-    questionId: mongoose.Types.ObjectId;
+    questionIndex: number;
     answer: string;
-    timeTaken: number;
 }
 export interface completeInterviewRequest {
     interviewId: mongoose.Types.ObjectId;
@@ -65,15 +63,21 @@ export interface getCandidateResponse {
     };
 }
 export interface submitAnswerResponse {
-    success: boolean;
+    questionIndex: number;
     score: number;
-    feedback: string;
+    reasoning: string;
+    breakdown: {
+        technical_accuracy: number;
+        clarity: number;
+        completeness: number;
+        depth: number;
+    };
     nextQuestion?: {
         id: string;
         text: string;
-        level: "easy" | "medium" | "hard";
+        level: 'easy' | 'medium' | 'hard';
         timeLimit: number;
-    };
+    } | null;
     isInterviewComplete: boolean;
 }
 export interface getCandidateDetailsResponse {

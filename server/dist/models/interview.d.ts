@@ -16,8 +16,11 @@ interface IQuestion {
 }
 interface Iinterview extends Document {
     candidateId: mongoose.Types.ObjectId | ICandidate;
+    jobPosition?: string;
+    experienceLevel?: string;
+    techStack?: string[];
     questions: IQuestion[];
-    status: "not-started" | "in-progress" | "completed";
+    status: "not-started" | "in-progress" | "completed" | "pending";
     finalScore: number;
     summary: string;
     startDate: Date;

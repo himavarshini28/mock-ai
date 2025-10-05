@@ -28,12 +28,24 @@ const interviewSchema = new mongoose_1.default.Schema({
         ref: "candidate",
         required: true
     },
+    jobPosition: {
+        type: String,
+        default: "Software Developer"
+    },
+    experienceLevel: {
+        type: String,
+        default: "Mid-level"
+    },
+    techStack: {
+        type: [String],
+        default: ["JavaScript", "React"]
+    },
     questions: [
         questionSchema
     ],
     status: {
         type: String,
-        enum: ["not-started", "in-progress", "completed"],
+        enum: ["not-started", "in-progress", "completed", "pending"],
         default: "not-started"
     },
     finalScore: {

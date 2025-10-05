@@ -4,10 +4,12 @@ import fs from "fs";
 
 const ALLOWED_MIME_TYPES = [
   'application/pdf',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+  'text/plain' // Allow text files for testing
 ];
 
-const ALLOWED_EXTENSIONS = ['.pdf', '.docx'];
+const ALLOWED_EXTENSIONS = ['.pdf', '.docx', '.doc', '.txt'];
 
 const MAX_FILE_SIZE = parseInt(process.env.MAX_FILE_SIZE || '10485760');
 

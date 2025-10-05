@@ -9,9 +9,11 @@ const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const ALLOWED_MIME_TYPES = [
     'application/pdf',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/msword',
+    'text/plain'
 ];
-const ALLOWED_EXTENSIONS = ['.pdf', '.docx'];
+const ALLOWED_EXTENSIONS = ['.pdf', '.docx', '.doc', '.txt'];
 const MAX_FILE_SIZE = parseInt(process.env.MAX_FILE_SIZE || '10485760');
 const storage = multer_1.default.diskStorage({
     destination: (req, file, cb) => {

@@ -6,6 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.candidate = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const candidateSchema = new mongoose_1.default.Schema({
+    userId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     name: {
         type: String,
         required: true

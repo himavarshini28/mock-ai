@@ -29,10 +29,8 @@ export interface createChatRequest
 }
 
 export interface SubmitAnswerRequest{
-    interviewId:mongoose.Types.ObjectId,
-    questionId:mongoose.Types.ObjectId,
-    answer:string,
-    timeTaken:number,
+    questionIndex: number,
+    answer: string
 }
 
 export interface completeInterviewRequest
@@ -76,15 +74,21 @@ export interface getCandidateResponse{
 }
 
 export interface submitAnswerResponse{
-    success: boolean,
+    questionIndex: number,
     score: number,
-    feedback: string,
-    nextQuestion?: {
-        id: string,
-        text: string,
-        level: "easy" | "medium" | "hard",
-        timeLimit: number
+    reasoning: string,
+    breakdown: {
+        technical_accuracy: number;
+        clarity: number;
+        completeness: number;
+        depth: number;
     },
+    nextQuestion?: {
+        id: string;
+        text: string;
+        level: 'easy' | 'medium' | 'hard';
+        timeLimit: number;
+    } | null,
     isInterviewComplete: boolean
 }
 

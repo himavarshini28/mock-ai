@@ -1,5 +1,6 @@
 import mongoose, { Document } from "mongoose";
 export interface ICandidate extends Document {
+    userId: mongoose.Types.ObjectId;
     name: string;
     email: string;
     phone: string;
